@@ -1,0 +1,23 @@
+if [ -z "${APP_MAJOR_VER}" ]; then
+export APP_MAJOR_VER=0
+fi
+
+if [ -z "${APP_MINOR_VER}" ]; then
+export APP_MINOR_VER=0
+fi
+
+if [ -z "${APP_PATCH_VER}" ]; then
+export APP_PATCH_VER=0
+fi
+
+if [ -z "${AVALON_REV}" ]; then
+echo "ERROR: AVALON_REV variable must be set"
+exit 1;
+fi
+
+if [ -z "${MCU_TYPE}" ]; then
+echo "ERROR: MCU_TYPE variable must be set"
+exit 1;
+fi
+
+teensy_loader_cli -w -v --mcu=${MCU_TYPE} ./dist/arm/bin/AvalonCore.${APP_MAJOR_VER}.${APP_MINOR_VER}.${APP_PATCH_VER}.hex
