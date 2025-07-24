@@ -1,7 +1,7 @@
 #!/bin/bash
-MAJOR_VER=1
-MINOR_VER=6
-PATCH_VER=3
+MAJOR_VER=0
+MINOR_VER=1
+PATCH_VER=0
 
 if [ "$ARCH" == "arm" ]; then
   source ./scripts/avalon_app_build_engine.TEENSY_MICROMOD/set_version.sh ${MAJOR_VER} ${MINOR_VER} ${PATCH_VER}
